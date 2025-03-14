@@ -1,10 +1,10 @@
 extends Node2D
 
 # Function to change the color of all child labels
-func change_label_colors(name: String, new_color: Color):
+func change_label_colors(nameNode: String, new_color: Color):
 	for child in get_children():
 		for subchild in child.get_children():
-			if subchild is Label and subchild.name == name:
+			if subchild is Label and subchild.name == nameNode:
 				subchild.label_settings.font_color = new_color
 				
 func change_alpha(new_alpha: Color):
