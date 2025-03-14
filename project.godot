@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="MoiMoi"
+run/main_scene="uid://52bn2y6cgjkm"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,3 +25,4 @@ window/stretch/mode="viewport"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true

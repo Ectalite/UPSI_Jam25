@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=3 uid="uid://52bn2y6cgjkm"]
+
+[ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
+
+[sub_resource type="Animation" id="Animation_x3b8t"]
+resource_name = "Titre"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitreAnimation/Titre gauche:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-48.0, 96.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitreAnimation/Titre droit:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [321.0, 176.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TitreAnimation/Ligne centre:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-25.0, 16.0]
+}
+
+[sub_resource type="Animation" id="Animation_k2o5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitreAnimation/Titre gauche:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [96.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitreAnimation/Titre droit:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [176.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TitreAnimation/Ligne centre:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [16.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0y4x"]
+_data = {
+&"RESET": SubResource("Animation_k2o5b"),
+&"Titre": SubResource("Animation_x3b8t")
+}
+
+[node name="Intro" type="Node2D"]
+metadata/_edit_lock_ = true
+metadata/_edit_horizontal_guides_ = [40.0]
+metadata/_edit_vertical_guides_ = [160.0]
+
+[node name="TitreAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e0y4x")
+}
+autoplay = "Titre"
+
+[node name="Titre gauche" type="Label" parent="TitreAnimation"]
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 144.0
+offset_bottom = 41.0
+text = "Moi"
+label_settings = ExtResource("1_x3b8t")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Titre droit" type="Label" parent="TitreAnimation"]
+offset_left = 176.0
+offset_top = 16.0
+offset_right = 224.0
+offset_bottom = 41.0
+text = "Moi"
+label_settings = ExtResource("1_x3b8t")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Ligne centre" type="ColorRect" parent="TitreAnimation"]
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 40.0
