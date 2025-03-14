@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0n3u1iqrea0i"
+path="res://.godot/imported/20th Century Fox Intro by the Blob Opera.mp3-73c40aeaf0f12aae9d27310a05760688.mp3str"
+
+[deps]
+
+source_file="res://Audio/20th Century Fox Intro by the Blob Opera.mp3"
+dest_files=["res://.godot/imported/20th Century Fox Intro by the Blob Opera.mp3-73c40aeaf0f12aae9d27310a05760688.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
