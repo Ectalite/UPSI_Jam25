@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://3w683joq71fd"]
+
+[ext_resource type="FontFile" uid="uid://bll8okpge01m3" path="res://fonts/Helvetica-Bold.ttf" id="1_go43j"]
+
+[resource]
+font = ExtResource("1_go43j")
+font_size = 24
