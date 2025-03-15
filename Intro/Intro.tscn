@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://52bn2y6cgjkm"]
+[gd_scene load_steps=33 format=4 uid="uid://52bn2y6cgjkm"]
 
 [ext_resource type="Script" uid="uid://dvujio4bewlb8" path="res://Intro/intro.gd" id="1_k2o5b"]
 [ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_r85xh"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
 [ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="10_ic8fc"]
+[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="10_pf2mr"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="11_tddqi"]
 
 [sub_resource type="Animation" id="Animation_k2o5b"]
@@ -210,15 +211,15 @@ font = ExtResource("4_adiul")
 font_size = 17
 
 [sub_resource type="LabelSettings" id="LabelSettings_ic8fc"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 19
 
 [sub_resource type="LabelSettings" id="LabelSettings_tddqi"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 19
 
 [sub_resource type="LabelSettings" id="LabelSettings_pf2mr"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_rgkhc"]
@@ -424,9 +425,9 @@ autoplay = "Titre"
 anchors_preset = -1
 anchor_left = -0.000520833
 anchor_right = -0.000520833
-offset_left = 425.0
+offset_left = 0.999999
 offset_top = 48.0
-offset_right = 473.0
+offset_right = 49.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -437,9 +438,8 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Titre droit" type="Label" parent="TitreAnimation"]
-offset_left = 1027.0
 offset_top = 48.0
-offset_right = 1075.0
+offset_right = 48.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -557,28 +557,28 @@ anchors_preset = -1
 anchor_left = -1.058
 anchor_right = -1.058
 offset_left = 151.333
-offset_top = 15.6107
+offset_top = 20.6486
 offset_right = 170.333
-offset_bottom = 41.0107
+offset_bottom = 46.0486
 text = "⬅"
 label_settings = SubResource("LabelSettings_ic8fc")
 
 [node name="Right" type="Label" parent="TextDroit"]
 layout_mode = 0
-offset_left = 72.8119
-offset_top = 44.071
-offset_right = 91.8119
-offset_bottom = 69.471
+offset_left = 73.2247
+offset_top = 38.7798
+offset_right = 92.2247
+offset_bottom = 64.1798
 rotation = 3.14159
 text = "⬅"
 label_settings = SubResource("LabelSettings_tddqi")
 
 [node name="Down" type="Label" parent="TextDroit"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 17.0
-offset_right = 91.0
-offset_bottom = 40.0
+offset_left = 74.7478
+offset_top = 17.4568
+offset_right = 90.7478
+offset_bottom = 40.4568
 text = "⬇"
 label_settings = SubResource("LabelSettings_pf2mr")
 
@@ -627,6 +627,7 @@ label_settings = SubResource("LabelSettings_vouss")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sol" type="TileMapLayer" parent="."]
+modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 use_parent_material = true
 scale = Vector2(3.75, 3.75)
@@ -645,11 +646,12 @@ shape = SubResource("SegmentShape2D_adiul")
 position = Vector2(1921, 360)
 shape = SubResource("SegmentShape2D_hj3ye")
 
-[node name="CharacterBodyEMILE" parent="." groups=["Emile"] instance=ExtResource("7_r85xh")]
+[node name="CharacterBodyEMILE" parent="." instance=ExtResource("7_r85xh")]
 position = Vector2(-680, 864)
 
-[node name="CharacterBodyHANS" parent="." groups=["Hans"] instance=ExtResource("8_r85xh")]
+[node name="CharacterBodyHANS" parent="." instance=ExtResource("8_r85xh")]
 position = Vector2(-784, 864)
+script = ExtResource("10_pf2mr")
 
 [node name="DoorEmile" parent="." instance=ExtResource("10_ic8fc")]
 position = Vector2(13, 851)

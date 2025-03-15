@@ -115,8 +115,10 @@ func _process(delta):
 			for child in get_children():
 				if child.name == "TextGauche" or child.name == "TextDroit":
 					for subchild in child.get_children():
-						if subchild.name == "Press":
-							subchild.text = "Rentre dedans"
+						if child.name == "TextGauche" and subchild.name == "Press":
+							subchild.text = "Emile ici"
+						elif child.name == "TextDroit" and subchild.name == "Press":
+							subchild.text = "Hans la"
 						elif subchild.name == "W":
 							subchild.text = "↙"
 						elif subchild.name == "Down":
@@ -125,7 +127,8 @@ func _process(delta):
 							subchild.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	if hansDoor and emileDoor:
 		#Change scene
-		get_tree().change_scene_to_file("res://level1/scene.tscn")
+		#get_tree().change_scene_to_file("res://level1/scene.tscn")
+		SceneTransitioner.transition_to("res://level1/scene.tscn")
 				
 # Optional: Connect the _input function to the input event
 func _ready():
