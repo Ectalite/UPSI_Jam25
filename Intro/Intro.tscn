@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://52bn2y6cgjkm"]
+[gd_scene load_steps=33 format=4 uid="uid://52bn2y6cgjkm"]
 
 [ext_resource type="Script" uid="uid://dvujio4bewlb8" path="res://Intro/intro.gd" id="1_k2o5b"]
 [ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_r85xh"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
 [ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="10_ic8fc"]
+[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="10_pf2mr"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="11_tddqi"]
 
 [sub_resource type="Animation" id="Animation_k2o5b"]
@@ -645,11 +646,12 @@ shape = SubResource("SegmentShape2D_adiul")
 position = Vector2(1921, 360)
 shape = SubResource("SegmentShape2D_hj3ye")
 
-[node name="CharacterBodyEMILE" parent="." groups=["Emile"] instance=ExtResource("7_r85xh")]
+[node name="CharacterBodyEMILE" parent="." instance=ExtResource("7_r85xh")]
 position = Vector2(-680, 864)
 
-[node name="CharacterBodyHANS" parent="." groups=["Hans"] instance=ExtResource("8_r85xh")]
+[node name="CharacterBodyHANS" parent="." instance=ExtResource("8_r85xh")]
 position = Vector2(-784, 864)
+script = ExtResource("10_pf2mr")
 
 [node name="DoorEmile" parent="." instance=ExtResource("10_ic8fc")]
 position = Vector2(13, 851)

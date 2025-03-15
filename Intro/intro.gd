@@ -125,7 +125,8 @@ func _process(delta):
 							subchild.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	if hansDoor and emileDoor:
 		#Change scene
-		get_tree().change_scene_to_file("res://level1/scene.tscn")
+		#get_tree().change_scene_to_file("res://level1/scene.tscn")
+		SceneTransitioner.transition_to("res://level1/scene.tscn")
 				
 # Optional: Connect the _input function to the input event
 func _ready():
