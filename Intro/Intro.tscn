@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dqem3j8ml5du7" path="res://fonts/UnifontExMono.ttf" id="4_adiul"]
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="6_adiul"]
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_r85xh"]
-[ext_resource type="PackedScene" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
+[ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
 [ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="10_ic8fc"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="11_tddqi"]
 
@@ -645,12 +645,11 @@ shape = SubResource("SegmentShape2D_adiul")
 position = Vector2(1921, 360)
 shape = SubResource("SegmentShape2D_hj3ye")
 
-[node name="CharacterBodyEMILE" parent="." instance=ExtResource("7_r85xh")]
+[node name="CharacterBodyEMILE" parent="." groups=["Emile"] instance=ExtResource("7_r85xh")]
 position = Vector2(-680, 864)
 
-[node name="CharacterBodyHANS" parent="." instance=ExtResource("8_r85xh")]
+[node name="CharacterBodyHANS" parent="." groups=["Hans"] instance=ExtResource("8_r85xh")]
 position = Vector2(-784, 864)
-collision_layer = 2
 
 [node name="DoorEmile" parent="." instance=ExtResource("10_ic8fc")]
 position = Vector2(13, 851)

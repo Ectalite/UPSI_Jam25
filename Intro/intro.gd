@@ -42,10 +42,10 @@ func change_alpha(new_alpha: Color):
 func createPerso(persoName: String):
 	if persoName == "emile" and !emilePlaced:
 		emilePlaced = true
-		Emile.position = Vector2(1352, 680)
+		Emile.position = Vector2(352, 680)
 	elif persoName == "hans" and !hansPlaced:
 		hansPlaced = true
-		Hans.position = Vector2(352, 680)
+		Hans.position = Vector2(1352, 680)
 
 # Function to handle keyboard input
 func _input(event):
@@ -53,35 +53,35 @@ func _input(event):
 		match event.keycode:
 			KEY_UP:
 				keyPressed["UP"] = true
-				createPerso("emile")
+				createPerso("hans")
 				change_label_colors("Up",Color(0, 1, 0)) # Validate
 			KEY_LEFT:
 				keyPressed["LEFT"] = true
-				createPerso("emile")
+				createPerso("hans")
 				change_label_colors("Left",Color(0, 1, 0)) # Validate
 			KEY_RIGHT:
 				keyPressed["RIGHT"] = true
-				createPerso("emile")
+				createPerso("hans")
 				change_label_colors("Right",Color(0, 1, 0)) # Validate
 			KEY_DOWN:
 				keyPressed["DOWN"] = true
-				createPerso("emile")
+				createPerso("hans")
 				change_label_colors("Down",Color(0, 1, 0)) # Validat
 			KEY_W:
 				keyPressed["W"] = true
-				createPerso("hans")
+				createPerso("emile")
 				change_label_colors("W",Color(0, 1, 0)) # Validate
 			KEY_A:
 				keyPressed["A"] = true
-				createPerso("hans")
+				createPerso("emile")
 				change_label_colors("A",Color(0, 1, 0)) # Validate
 			KEY_S:
 				keyPressed["S"] = true
-				createPerso("hans")
+				createPerso("emile")
 				change_label_colors("S",Color(0, 1, 0)) # Validate
 			KEY_D:
 				keyPressed["D"] = true
-				createPerso("hans")
+				createPerso("emile")
 				change_label_colors("D",Color(0, 1, 0)) # Validate
 
 var alpha = 0
@@ -124,7 +124,8 @@ func _process(delta):
 						else:
 							subchild.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	if hansDoor and emileDoor:
-		print("Hello world")
+		#Change scene
+		get_tree().change_scene_to_file("res://level1/scene.tscn")
 				
 # Optional: Connect the _input function to the input event
 func _ready():
