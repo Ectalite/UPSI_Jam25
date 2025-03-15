@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://s84jfeqs7p4r"]
+
+[ext_resource type="Script" uid="uid://dhai58t5d8mr6" path="res://Scenes/door/door_emile.gd" id="1_o7hnu"]
+[ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="2_i80b8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o7hnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj185"]
+size = Vector2(88, 168)
+
+[node name="DoorEmile" type="Node2D"]
+script = ExtResource("1_o7hnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(88, 168)
+texture = SubResource("PlaceholderTexture2D_o7hnu")
+
+[node name="ExitArea" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(44, 84)
+shape = SubResource("RectangleShape2D_jj185")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = -14.8
+text = "E"
+label_settings = ExtResource("2_i80b8")
+
+[connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]

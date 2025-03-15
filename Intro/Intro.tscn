@@ -1,51 +1,47 @@
-[gd_scene load_steps=29 format=4 uid="uid://52bn2y6cgjkm"]
+[gd_scene load_steps=32 format=4 uid="uid://52bn2y6cgjkm"]
 
 [ext_resource type="Script" uid="uid://dvujio4bewlb8" path="res://Intro/intro.gd" id="1_k2o5b"]
 [ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
 [ext_resource type="FontFile" uid="uid://cav4tu8p3eal" path="res://fonts/Helvetica.ttf" id="2_k2o5b"]
 [ext_resource type="FontFile" uid="uid://bll8okpge01m3" path="res://fonts/Helvetica-Bold.ttf" id="3_bhm1i"]
+[ext_resource type="AudioStream" uid="uid://b0n3u1iqrea0i" path="res://Audio/20th Century Fox Intro by the Blob Opera.mp3" id="3_tksip"]
 [ext_resource type="FontFile" uid="uid://dqem3j8ml5du7" path="res://fonts/UnifontExMono.ttf" id="4_adiul"]
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="6_adiul"]
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_r85xh"]
 [ext_resource type="PackedScene" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
+[ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="10_ic8fc"]
+[ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="11_tddqi"]
 
 [sub_resource type="Animation" id="Animation_k2o5b"]
 length = 8.0
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TitreAnimation/AudioStreamPlayer")
+tracks/0/path = NodePath("ActivateSound:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
-}],
-"times": PackedFloat32Array(0, 7.96667)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ActivateSound:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(3, 3.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextGauche:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextGauche:modulate")
+tracks/2/path = NodePath("TextDroit:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -57,26 +53,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextDroit:modulate")
+tracks/3/path = NodePath("TitreAnimation/ColorRect:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TitreAnimation/ColorRect:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [24.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TitreAnimation/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.133333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_x3b8t"]
@@ -106,41 +102,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [1921.0, 1027.0]
 }
-tracks/2/type = "audio"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TitreAnimation/AudioStreamPlayer")
+tracks/2/path = NodePath("ActivateSound:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
-}],
-"times": PackedFloat32Array(0, 7.96667)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ActivateSound:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(3, 3.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextGauche:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextGauche:modulate")
+tracks/4/path = NodePath("TextDroit:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -152,11 +141,11 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextDroit:modulate")
+tracks/5/path = NodePath("Sol:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5, 8),
+"times": PackedFloat32Array(4.96667, 7.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -164,26 +153,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sol:modulate")
+tracks/6/path = NodePath("TitreAnimation/ColorRect:position:y")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(4.96667, 7.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("TitreAnimation/ColorRect:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(4.03333, 7.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-248.0, 24.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TitreAnimation/AudioStreamPlayer:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(-0.266667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e0y4x"]
@@ -420,9 +409,9 @@ b = Vector2(0, 720)
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_k2o5b")
-metadata/_edit_lock_ = true
 metadata/_edit_horizontal_guides_ = [360.0, 576.0]
 metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_lock_ = true
 
 [node name="TitreAnimation" type="AnimationPlayer" parent="."]
 deterministic = true
@@ -435,9 +424,9 @@ autoplay = "Titre"
 anchors_preset = -1
 anchor_left = -0.000520833
 anchor_right = -0.000520833
-offset_left = 0.999999
+offset_left = 425.0
 offset_top = 48.0
-offset_right = 49.0
+offset_right = 473.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -448,8 +437,9 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Titre droit" type="Label" parent="TitreAnimation"]
+offset_left = 1027.0
 offset_top = 48.0
-offset_right = 48.0
+offset_right = 1075.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -459,6 +449,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitreAnimation"]
+stream = ExtResource("3_tksip")
 
 [node name="ColorRect" type="ColorRect" parent="TitreAnimation"]
 offset_left = 936.0
@@ -636,7 +627,6 @@ label_settings = SubResource("LabelSettings_vouss")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sol" type="TileMapLayer" parent="."]
-modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 use_parent_material = true
 scale = Vector2(3.75, 3.75)
@@ -660,5 +650,14 @@ position = Vector2(-680, 864)
 
 [node name="CharacterBodyHANS" parent="." instance=ExtResource("8_r85xh")]
 position = Vector2(-784, 864)
+collision_layer = 2
+
+[node name="DoorEmile" parent="." instance=ExtResource("10_ic8fc")]
+position = Vector2(13, 851)
+
+[node name="DoorHans" parent="." instance=ExtResource("11_tddqi")]
+position = Vector2(1818, 853)
 
 [connection signal="animation_finished" from="TitreAnimation" to="." method="_on_titre_animation_animation_finished"]
+[connection signal="area_triggered" from="DoorEmile" to="." method="_on_emileDoor_triggered"]
+[connection signal="area_triggered" from="DoorHans" to="." method="_on_hansDoor_triggered"]

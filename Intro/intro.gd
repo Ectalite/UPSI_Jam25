@@ -5,6 +5,24 @@ var activate = false
 @onready var Hans = $CharacterBodyHANS
 var emilePlaced = false
 var hansPlaced = false
+var keyPressed = {
+	"W": false,
+	"A": false,
+	"S": false,
+	"D": false,
+	"UP": false,
+	"DOWN": false,
+	"LEFT": false,
+	"RIGHT": false
+}
+var emileDoor = false
+var hansDoor = false
+var tutoEnd = false
+
+func _on_emileDoor_triggered():
+	emileDoor = true
+func _on_hansDoor_triggered():
+	hansDoor = true
 
 # Function to change the color of all child labels
 func change_label_colors(nameNode: String, new_color: Color):
@@ -34,27 +52,35 @@ func _input(event):
 	if activate and event is InputEventKey and event.pressed:
 		match event.keycode:
 			KEY_UP:
+				keyPressed["UP"] = true
 				createPerso("emile")
 				change_label_colors("Up",Color(0, 1, 0)) # Validate
 			KEY_LEFT:
+				keyPressed["LEFT"] = true
 				createPerso("emile")
 				change_label_colors("Left",Color(0, 1, 0)) # Validate
 			KEY_RIGHT:
+				keyPressed["RIGHT"] = true
 				createPerso("emile")
 				change_label_colors("Right",Color(0, 1, 0)) # Validate
 			KEY_DOWN:
+				keyPressed["DOWN"] = true
 				createPerso("emile")
 				change_label_colors("Down",Color(0, 1, 0)) # Validat
 			KEY_W:
+				keyPressed["W"] = true
 				createPerso("hans")
 				change_label_colors("W",Color(0, 1, 0)) # Validate
 			KEY_A:
+				keyPressed["A"] = true
 				createPerso("hans")
 				change_label_colors("A",Color(0, 1, 0)) # Validate
 			KEY_S:
+				keyPressed["S"] = true
 				createPerso("hans")
 				change_label_colors("S",Color(0, 1, 0)) # Validate
 			KEY_D:
+				keyPressed["D"] = true
 				createPerso("hans")
 				change_label_colors("D",Color(0, 1, 0)) # Validate
 
@@ -62,20 +88,51 @@ var alpha = 0
 var increasing = true
 const alpha_speed = 0.7
 
-func _process(delta):
-	if increasing:
-		alpha += delta*alpha_speed
-		if alpha > 1:
-			increasing = false
-	else:
-		alpha -= delta*alpha_speed
-		if alpha < 0.1:
-			increasing = true
-	change_alpha(Color(1,1,1,alpha))
+func tutorialFinished() -> bool:
+	for key in keyPressed.values():
+		if not key:
+			return false
+	return true
 
+func _process(delta):
+	if !tutorialFinished():
+		if increasing:
+			alpha += delta*alpha_speed
+			if alpha > 1:
+				increasing = false
+		else:
+			alpha -= delta*alpha_speed
+			if alpha < 0.1:
+				increasing = true
+		change_alpha(Color(1,1,1,alpha))
+	else:
+		if !tutoEnd:
+			tutoEnd = true
+			$DoorEmile.set_process(true)
+			$DoorHans.set_process(true)
+			$DoorEmile.visible = true
+			$DoorHans.visible = true
+			for child in get_children():
+				if child.name == "TextGauche" or child.name == "TextDroit":
+					for subchild in child.get_children():
+						if subchild.name == "Press":
+							subchild.text = "Rentre dedans"
+						elif subchild.name == "W":
+							subchild.text = "↙"
+						elif subchild.name == "Down":
+							subchild.text = "↘"
+						else:
+							subchild.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	if hansDoor and emileDoor:
+		print("Hello world")
+				
 # Optional: Connect the _input function to the input event
 func _ready():
 	set_process_input(true)
+	$DoorEmile.visible = false
+	$DoorEmile.set_process(false)
+	$DoorHans.visible = false
+	$DoorHans.set_process(false)
 
 @warning_ignore("unused_parameter")
 func _on_titre_animation_animation_finished(anim_name: StringName) -> void:
