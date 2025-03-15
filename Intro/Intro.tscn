@@ -1,51 +1,85 @@
-[gd_scene load_steps=17 format=3 uid="uid://52bn2y6cgjkm"]
+[gd_scene load_steps=27 format=4 uid="uid://52bn2y6cgjkm"]
 
 [ext_resource type="Script" uid="uid://dvujio4bewlb8" path="res://Intro/intro.gd" id="1_k2o5b"]
 [ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
 [ext_resource type="FontFile" uid="uid://cav4tu8p3eal" path="res://fonts/Helvetica.ttf" id="2_k2o5b"]
+[ext_resource type="FontFile" uid="uid://bll8okpge01m3" path="res://fonts/Helvetica-Bold.ttf" id="3_bhm1i"]
+[ext_resource type="FontFile" uid="uid://dqem3j8ml5du7" path="res://fonts/UnifontExMono.ttf" id="4_adiul"]
+[ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="6_adiul"]
 
 [sub_resource type="Animation" id="Animation_k2o5b"]
-length = 0.001
-tracks/0/type = "value"
+length = 8.0
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TitreAnimation/Titre gauche:position:x")
+tracks/0/path = NodePath("TitreAnimation/AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [96.0]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(0, 7.96667)
 }
+tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TitreAnimation/Titre droit:position:x")
+tracks/1/path = NodePath("ActivateSound:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(3, 3.96667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [176.0]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TitreAnimation/Ligne centre:position:y")
+tracks/2/path = NodePath("TextGauche:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextDroit:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TitreAnimation/ColorRect:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [16.0]
+"values": [24.0]
 }
 
 [sub_resource type="Animation" id="Animation_x3b8t"]
 resource_name = "Titre"
-length = 3.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,10 +87,10 @@ tracks/0/path = NodePath("TitreAnimation/Titre gauche:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.96667),
+"times": PackedFloat32Array(4, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-48.0, 96.0]
+"values": [-473.0, 424.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -65,22 +99,89 @@ tracks/1/path = NodePath("TitreAnimation/Titre droit:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.96667),
+"times": PackedFloat32Array(4, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [321.0, 176.0]
+"values": [1921.0, 1027.0]
 }
-tracks/2/type = "value"
+tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TitreAnimation/Ligne centre:position:y")
+tracks/2/path = NodePath("TitreAnimation/AudioStreamPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.96667),
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(0, 7.96667)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ActivateSound:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 3.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-25.0, 16.0]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextGauche:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextDroit:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sol:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.96667, 7.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TitreAnimation/ColorRect:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4.03333, 7.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-248.0, 24.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e0y4x"]
@@ -114,68 +215,264 @@ font = ExtResource("2_k2o5b")
 font_size = 17
 
 [sub_resource type="LabelSettings" id="LabelSettings_tksip"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 17
 
 [sub_resource type="LabelSettings" id="LabelSettings_ic8fc"]
 font = ExtResource("2_k2o5b")
-font_size = 17
+font_size = 19
 
 [sub_resource type="LabelSettings" id="LabelSettings_tddqi"]
 font = ExtResource("2_k2o5b")
-font_size = 17
+font_size = 19
 
 [sub_resource type="LabelSettings" id="LabelSettings_pf2mr"]
 font = ExtResource("2_k2o5b")
-font_size = 17
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_rgkhc"]
+font = ExtResource("3_bhm1i")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_vouss"]
+font = ExtResource("4_adiul")
+font_size = 26
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hj3ye"]
+texture = ExtResource("6_adiul")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:1/0 = 0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:1/0 = 0
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:4/0 = 0
+14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r85xh"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hj3ye")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hj3ye"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_adiul"]
+b = Vector2(0, 192)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hj3ye"]
+b = Vector2(0, 720)
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_k2o5b")
 metadata/_edit_lock_ = true
-metadata/_edit_horizontal_guides_ = [48.0]
-metadata/_edit_vertical_guides_ = [160.0]
+metadata/_edit_horizontal_guides_ = [360.0, 576.0]
+metadata/_edit_vertical_guides_ = [960.0]
 
 [node name="TitreAnimation" type="AnimationPlayer" parent="."]
+deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_e0y4x")
 }
 autoplay = "Titre"
 
 [node name="Titre gauche" type="Label" parent="TitreAnimation"]
-offset_left = 96.0
-offset_top = 16.0
-offset_right = 144.0
-offset_bottom = 41.0
+anchors_preset = -1
+anchor_left = -0.000520833
+anchor_right = -0.000520833
+offset_left = 0.999999
+offset_top = 48.0
+offset_right = 49.0
+offset_bottom = 73.0
+scale = Vector2(10, 10)
 text = "Moi"
 label_settings = ExtResource("1_x3b8t")
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Titre droit" type="Label" parent="TitreAnimation"]
-offset_left = 176.0
-offset_top = 16.0
-offset_right = 224.0
-offset_bottom = 41.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 73.0
+scale = Vector2(10, 10)
 text = "Moi"
 label_settings = ExtResource("1_x3b8t")
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="Ligne centre" type="ColorRect" parent="TitreAnimation"]
-offset_left = 152.0
-offset_top = 16.0
-offset_right = 168.0
-offset_bottom = 40.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitreAnimation"]
+
+[node name="ColorRect" type="ColorRect" parent="TitreAnimation"]
+offset_left = 936.0
+offset_top = 24.0
+offset_right = 986.0
+offset_bottom = 256.0
 
 [node name="TextGauche" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 24.0
-offset_top = 66.0
-offset_right = 136.0
-offset_bottom = 122.0
+offset_top = 360.0
+offset_right = 112.0
+offset_bottom = 416.0
+scale = Vector2(8.51216, 8.51216)
 
 [node name="Press" type="Label" parent="TextGauche"]
 texture_filter = 1
@@ -232,13 +529,15 @@ text = "D"
 label_settings = SubResource("LabelSettings_hj3ye")
 
 [node name="TextDroit" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 184.0
-offset_top = 64.0
-offset_right = 296.0
-offset_bottom = 120.0
+offset_left = 960.0
+offset_top = 360.0
+offset_right = 1072.0
+offset_bottom = 416.0
+scale = Vector2(8.53537, 8.53537)
 
 [node name="Press" type="Label" parent="TextDroit"]
 layout_mode = 0
@@ -264,19 +563,19 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.058
 anchor_right = -1.058
-offset_left = 154.496
-offset_top = 21.0
-offset_right = 170.496
-offset_bottom = 44.0
+offset_left = 151.333
+offset_top = 15.6107
+offset_right = 170.333
+offset_bottom = 41.0107
 text = "⬅"
 label_settings = SubResource("LabelSettings_ic8fc")
 
 [node name="Right" type="Label" parent="TextDroit"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 47.0
-offset_right = 86.0
-offset_bottom = 70.0
+offset_left = 72.8119
+offset_top = 44.071
+offset_right = 91.8119
+offset_bottom = 69.471
 rotation = 3.14159
 text = "⬅"
 label_settings = SubResource("LabelSettings_tddqi")
@@ -284,8 +583,74 @@ label_settings = SubResource("LabelSettings_tddqi")
 [node name="Down" type="Label" parent="TextDroit"]
 layout_mode = 0
 offset_left = 75.0
-offset_top = 21.0
+offset_top = 17.0
 offset_right = 91.0
-offset_bottom = 44.0
+offset_bottom = 40.0
 text = "⬇"
 label_settings = SubResource("LabelSettings_pf2mr")
+
+[node name="ActivateSound" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Activate sound" type="Label" parent="ActivateSound"]
+layout_mode = 2
+anchor_left = 0.210938
+anchor_top = -0.623148
+anchor_right = 1.76094
+anchor_bottom = -0.623148
+offset_left = 417.563
+offset_right = 465.563
+offset_bottom = 133.926
+scale = Vector2(10, 10)
+text = "Allumez le son !"
+label_settings = SubResource("LabelSettings_rgkhc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Gauche" type="Label" parent="ActivateSound/Activate sound"]
+layout_mode = 0
+offset_top = 57.6
+offset_right = 26.0
+offset_bottom = 83.8
+rotation = 2.58658
+text = "🕪"
+label_settings = SubResource("LabelSettings_vouss")
+metadata/_edit_use_anchors_ = true
+
+[node name="Droit" type="Label" parent="ActivateSound/Activate sound"]
+layout_mode = 0
+offset_left = 121.5
+offset_top = 32.8
+offset_right = 147.5
+offset_bottom = 59.0
+rotation = 0.6353
+text = "🕪"
+label_settings = SubResource("LabelSettings_vouss")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sol" type="TileMapLayer" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+use_parent_material = true
+scale = Vector2(3.75, 3.75)
+tile_map_data = PackedByteArray("AAAAABEAAAAMAAQAAAABABEAAAANAAQAAAACABEAAAANAAQAAAADABEAAAANAAQAAAAEABEAAAANAAQAAAAFABEAAAANAAQAAAAGABEAAAANAAQAAAAHABEAAAANAAQAAAAIABEAAAANAAQAAAAJABEAAAANAAQAAAAKABEAAAANAAQAAAALABEAAAANAAQAAAAMABEAAAANAAQAAAANABEAAAANAAQAAAAOABEAAAANAAQAAAAPABEAAAANAAQAAAAQABEAAAANAAQAAAARABEAAAANAAQAAAASABEAAAANAAQAAAATABEAAAANAAQAAAAUABEAAAANAAQAAAAVABEAAAANAAQAAAAWABEAAAANAAQAAAAXABEAAAANAAQAAAAYABEAAAANAAQAAAAZABEAAAANAAQAAAAaABEAAAANAAQAAAAbABEAAAANAAQAAAAcABEAAAANAAQAAAAdABEAAAANAAQAAAAeABEAAAANAAQAAAAfABEAAAAOAAQAAADz/w4AAAANAAQAAADz/w8AAAANAAQAAADz/xAAAAANAAQAAADz/xIAAAANAAQAAAD0/xIAAAANAAQAAAD4/xIAAAANAAQAAAD5/xIAAAANAAQAAAD6/xIAAAANAAQAAAD6/xEAAAANAAQAAAD6/xAAAAANAAQAAAD6/w8AAAANAAQAAAD6/w4AAAANAAQAAADz/xEAAAANAAQAAAD1/xIAAAANAAQAAAD2/xIAAAANAAQAAAD3/xIAAAANAAQAAAA=")
+tile_set = SubResource("TileSet_r85xh")
+
+[node name="Bordure" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_hj3ye")
+
+[node name="CollisionGauche" type="CollisionShape2D" parent="Bordure"]
+position = Vector2(-5, 360)
+scale = Vector2(3.75, 3.75)
+shape = SubResource("SegmentShape2D_adiul")
+
+[node name="CollisionDroite" type="CollisionShape2D" parent="Bordure"]
+position = Vector2(1921, 360)
+shape = SubResource("SegmentShape2D_hj3ye")
+
+[connection signal="animation_finished" from="TitreAnimation" to="." method="_on_titre_animation_animation_finished"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="2_eu3x3"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_pink_2d.tscn" id="3_axbwq"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yydc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnita"]
 texture = ExtResource("2_eu3x3")
 0:0/0 = 0
 1:0/0 = 0
@@ -169,7 +169,7 @@ texture = ExtResource("2_eu3x3")
 
 [sub_resource type="TileSet" id="TileSet_6q4rh"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_6yydc")
+sources/0 = SubResource("TileSetAtlasSource_rnita")
 
 [node name="Node" type="Node"]
 
