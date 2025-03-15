@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dm8hyxr0ffxr7"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dm8hyxr0ffxr7"]
 
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="1_ingek"]
 [ext_resource type="Texture2D" uid="uid://crhoyucq3d5wb" path="res://Images/Terrain/Terrain (16x16) pressure water.png" id="2_7ilqy"]
+[ext_resource type="Texture2D" uid="uid://ctpmv8ujcpw2c" path="res://Images/Terrain/waterfall(1).png" id="3_7ilqy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnita"]
 texture = ExtResource("1_ingek")
@@ -343,7 +344,13 @@ texture = ExtResource("2_7ilqy")
 19:10/0 = 0
 20:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwwc3"]
+texture = ExtResource("3_7ilqy")
+0:0/0 = 0
+0:1/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rnita")
 sources/1 = SubResource("TileSetAtlasSource_6q4rh")
+sources/2 = SubResource("TileSetAtlasSource_nwwc3")
