@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="1_rnita"]
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="2_eu3x3"]
-[ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="3_axbwq"]
+[ext_resource type="PackedScene" path="res://Scenes/character_pink_2d.tscn" id="3_axbwq"]
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="4_eu3x3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnita"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://52bn2y6cgjkm"]
+[gd_scene load_steps=29 format=4 uid="uid://52bn2y6cgjkm"]
 
 [ext_resource type="Script" uid="uid://dvujio4bewlb8" path="res://Intro/intro.gd" id="1_k2o5b"]
 [ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://bll8okpge01m3" path="res://fonts/Helvetica-Bold.ttf" id="3_bhm1i"]
 [ext_resource type="FontFile" uid="uid://dqem3j8ml5du7" path="res://fonts/UnifontExMono.ttf" id="4_adiul"]
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="6_adiul"]
+[ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_r85xh"]
+[ext_resource type="PackedScene" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
 
 [sub_resource type="Animation" id="Animation_k2o5b"]
 length = 8.0
@@ -652,5 +654,11 @@ shape = SubResource("SegmentShape2D_adiul")
 [node name="CollisionDroite" type="CollisionShape2D" parent="Bordure"]
 position = Vector2(1921, 360)
 shape = SubResource("SegmentShape2D_hj3ye")
+
+[node name="CharacterBodyEMILE" parent="." instance=ExtResource("7_r85xh")]
+position = Vector2(-680, 864)
+
+[node name="CharacterBodyHANS" parent="." instance=ExtResource("8_r85xh")]
+position = Vector2(-784, 864)
 
 [connection signal="animation_finished" from="TitreAnimation" to="." method="_on_titre_animation_animation_finished"]
