@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhpph24xi61ah"
-path="res://.godot/imported/Idle (32x32).png-084008531066554c4ec210a61ff3b3d4.ctex"
+uid="uid://dsv0fot7223wp"
+path="res://.godot/imported/Run (32x32).png-3f8019d3b6454b09824e1d8136f38963.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Hans et Emile/Pink Man/Idle (32x32).png"
-dest_files=["res://.godot/imported/Idle (32x32).png-084008531066554c4ec210a61ff3b3d4.ctex"]
+source_file="res://Images/Hans et Emile/Hans/Run (32x32).png"
+dest_files=["res://.godot/imported/Run (32x32).png-3f8019d3b6454b09824e1d8136f38963.ctex"]
 
 [params]
 
