@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://deuplwpm3lpgw"]
+[gd_scene load_steps=8 format=3 uid="uid://deuplwpm3lpgw"]
 
 [ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="1_rnita"]
 [ext_resource type="Texture2D" uid="uid://d4nd0eywwed35" path="res://Images/Terrain/Terrain (16x16).png" id="2_eu3x3"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="4_axbwq"]
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="4_eu3x3"]
+[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="5_axbwq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnita"]
 texture = ExtResource("2_eu3x3")
@@ -202,4 +203,4 @@ layer_0/tile_data = PackedInt32Array(1114113, 458752, 0, 1114114, 458752, 0, 111
 position = Vector2(-19, 683)
 
 [node name="CharacterBodyHANS2D" parent="." instance=ExtResource("4_axbwq")]
-position = Vector2(113, 647)
+script = ExtResource("5_axbwq")
