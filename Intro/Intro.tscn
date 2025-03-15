@@ -211,15 +211,15 @@ font = ExtResource("4_adiul")
 font_size = 17
 
 [sub_resource type="LabelSettings" id="LabelSettings_ic8fc"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 19
 
 [sub_resource type="LabelSettings" id="LabelSettings_tddqi"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 19
 
 [sub_resource type="LabelSettings" id="LabelSettings_pf2mr"]
-font = ExtResource("2_k2o5b")
+font = ExtResource("4_adiul")
 font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_rgkhc"]
@@ -425,9 +425,9 @@ autoplay = "Titre"
 anchors_preset = -1
 anchor_left = -0.000520833
 anchor_right = -0.000520833
-offset_left = 425.0
+offset_left = 0.999999
 offset_top = 48.0
-offset_right = 473.0
+offset_right = 49.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -438,9 +438,8 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Titre droit" type="Label" parent="TitreAnimation"]
-offset_left = 1027.0
 offset_top = 48.0
-offset_right = 1075.0
+offset_right = 48.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -558,28 +557,28 @@ anchors_preset = -1
 anchor_left = -1.058
 anchor_right = -1.058
 offset_left = 151.333
-offset_top = 15.6107
+offset_top = 20.6486
 offset_right = 170.333
-offset_bottom = 41.0107
+offset_bottom = 46.0486
 text = "⬅"
 label_settings = SubResource("LabelSettings_ic8fc")
 
 [node name="Right" type="Label" parent="TextDroit"]
 layout_mode = 0
-offset_left = 72.8119
-offset_top = 44.071
-offset_right = 91.8119
-offset_bottom = 69.471
+offset_left = 73.2247
+offset_top = 38.7798
+offset_right = 92.2247
+offset_bottom = 64.1798
 rotation = 3.14159
 text = "⬅"
 label_settings = SubResource("LabelSettings_tddqi")
 
 [node name="Down" type="Label" parent="TextDroit"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 17.0
-offset_right = 91.0
-offset_bottom = 40.0
+offset_left = 74.7478
+offset_top = 17.4568
+offset_right = 90.7478
+offset_bottom = 40.4568
 text = "⬇"
 label_settings = SubResource("LabelSettings_pf2mr")
 
@@ -628,6 +627,7 @@ label_settings = SubResource("LabelSettings_vouss")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sol" type="TileMapLayer" parent="."]
+modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 use_parent_material = true
 scale = Vector2(3.75, 3.75)

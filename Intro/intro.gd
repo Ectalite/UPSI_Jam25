@@ -115,8 +115,10 @@ func _process(delta):
 			for child in get_children():
 				if child.name == "TextGauche" or child.name == "TextDroit":
 					for subchild in child.get_children():
-						if subchild.name == "Press":
-							subchild.text = "Rentre dedans"
+						if child.name == "TextGauche" and subchild.name == "Press":
+							subchild.text = "Emile ici"
+						elif child.name == "TextDroit" and subchild.name == "Press":
+							subchild.text = "Hans la"
 						elif subchild.name == "W":
 							subchild.text = "↙"
 						elif subchild.name == "Down":

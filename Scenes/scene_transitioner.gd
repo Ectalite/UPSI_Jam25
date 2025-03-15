@@ -17,6 +17,7 @@ func transition_to(next_scene: String) -> void:
 	_anim_player.play("Transition")
 	_next_scene = next_scene
 
+@warning_ignore("unused_parameter")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	visible = false
 	# Changes the scene
