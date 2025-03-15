@@ -108,10 +108,8 @@ func _process(delta):
 	else:
 		if !tutoEnd:
 			tutoEnd = true
-			$DoorEmile.set_process(true)
-			$DoorHans.set_process(true)
-			$DoorEmile.visible = true
-			$DoorHans.visible = true
+			$DoorEmile.unlock()
+			$DoorHans.unlock()
 			for child in get_children():
 				if child.name == "TextGauche" or child.name == "TextDroit":
 					for subchild in child.get_children():
@@ -133,10 +131,6 @@ func _process(delta):
 # Optional: Connect the _input function to the input event
 func _ready():
 	set_process_input(true)
-	$DoorEmile.visible = false
-	$DoorEmile.set_process(false)
-	$DoorHans.visible = false
-	$DoorHans.set_process(false)
 
 @warning_ignore("unused_parameter")
 func _on_titre_animation_animation_finished(anim_name: StringName) -> void:

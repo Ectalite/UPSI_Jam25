@@ -1,25 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://npfu11a3mkh1"]
 
 [ext_resource type="Script" uid="uid://bc1lok6btuvt5" path="res://Scenes/door/door_hans.gd" id="1_u1n5j"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u1n5j"]
+[ext_resource type="Texture2D" uid="uid://bah5ufkpb0562" path="res://Images/Portes/portehansfermee.png" id="2_3ed1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj185"]
-size = Vector2(88, 168)
+size = Vector2(84, 128)
 
 [node name="DoorHans" type="Node2D"]
 script = ExtResource("1_u1n5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(88, 168)
-texture = SubResource("PlaceholderTexture2D_u1n5j")
+texture = ExtResource("2_3ed1j")
+centered = false
 
 [node name="ExitArea" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
-position = Vector2(44, 84)
+position = Vector2(54, 72)
 shape = SubResource("RectangleShape2D_jj185")
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
