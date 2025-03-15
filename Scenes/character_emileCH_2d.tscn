@@ -176,7 +176,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7obnc"]
 size = Vector2(73.125, 103.688)
 
-[node name="CharacterBodyEMILE2D" type="CharacterBody2D"]
+[node name="CharacterBodyEMILE2D" type="CharacterBody2D" groups=["Emile"]]
 script = ExtResource("1_xrdqi")
 
 [node name="SpriteEMILE2D" type="AnimatedSprite2D" parent="."]

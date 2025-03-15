@@ -227,7 +227,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7obnc"]
 size = Vector2(73.125, 97.375)
 
-[node name="CharacterBodyHANS2D" type="CharacterBody2D"]
+[node name="CharacterBodyHANS2D" type="CharacterBody2D" groups=["Hans"]]
+collision_layer = 2
 script = SubResource("GDScript_oid6a")
 
 [node name="SpriteHANS2D" type="AnimatedSprite2D" parent="."]
