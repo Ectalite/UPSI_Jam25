@@ -425,9 +425,9 @@ autoplay = "Titre"
 anchors_preset = -1
 anchor_left = -0.000520833
 anchor_right = -0.000520833
-offset_left = 0.999999
+offset_left = -472.0
 offset_top = 48.0
-offset_right = 49.0
+offset_right = -424.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -438,8 +438,9 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Titre droit" type="Label" parent="TitreAnimation"]
+offset_left = 1921.0
 offset_top = 48.0
-offset_right = 48.0
+offset_right = 1969.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -453,9 +454,9 @@ stream = ExtResource("3_tksip")
 
 [node name="ColorRect" type="ColorRect" parent="TitreAnimation"]
 offset_left = 936.0
-offset_top = 24.0
+offset_top = -248.0
 offset_right = 986.0
-offset_bottom = 256.0
+offset_bottom = -16.0
 
 [node name="TextGauche" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -627,7 +628,7 @@ label_settings = SubResource("LabelSettings_vouss")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sol" type="TileMapLayer" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 use_parent_material = true
 scale = Vector2(3.75, 3.75)
