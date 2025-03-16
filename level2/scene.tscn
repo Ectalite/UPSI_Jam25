@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://67k5vydtj8w1"]
+[gd_scene load_steps=10 format=4 uid="uid://67k5vydtj8w1"]
 
 [ext_resource type="Script" uid="uid://bocuyvao8wpw" path="res://level2/scene.gd" id="1_jgev5"]
 [ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="2_7trsf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0pt8ltywtl2" path="res://Scenes/button/button.tscn" id="6_d6flr"]
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_xyevs"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_xlb5q"]
+[ext_resource type="TileSet" uid="uid://dmidgnmcu60rb" path="res://level2/TileSet.tres" id="9_6rs2n"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_jgev5")
@@ -39,11 +40,28 @@ position = Vector2(90, 856)
 [node name="CharacterBodyHANS2D" parent="." instance=ExtResource("8_xlb5q")]
 position = Vector2(-20, 855)
 
+
 [node name="Button" parent="." instance=ExtResource("6_d6flr")]
 position = Vector2(1781, 121)
 
 [node name="Button2" parent="." instance=ExtResource("6_d6flr")]
 position = Vector2(71, 184)
 
+[node name="OuvertureMilieu" parent="." instance=ExtResource("6_d6flr")]
+position = Vector2(192, 720)
+
+[node name="OuvertureMilieu2" parent="." instance=ExtResource("6_d6flr")]
+position = Vector2(1224, 960)
+
+[node name="Milieu" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(3.75, 3.75)
+tile_map_data = PackedByteArray("AAASAA8AAAAPAAgAAAASABAAAAAPAAoAAAA=")
+tile_set = ExtResource("9_6rs2n")
+
 [connection signal="area_triggered" from="DoorEmile" to="." method="_on_emileDoor_triggered"]
 [connection signal="area_triggered" from="DoorHans" to="." method="_on_hansDoor_triggered"]
+[connection signal="button_pressed" from="OuvertureMilieu" to="." method="_on_ouverture_milieu_button_pressed"]
+[connection signal="button_released" from="OuvertureMilieu" to="." method="_on_ouverture_milieu_button_released"]
+[connection signal="button_pressed" from="OuvertureMilieu2" to="." method="_on_ouverture_milieu_2_button_pressed"]
+[connection signal="button_released" from="OuvertureMilieu2" to="." method="_on_ouverture_milieu_2_button_released"]

@@ -142,6 +142,7 @@ texture = ExtResource("1_ingek")
 12:8/0 = 0
 13:8/0 = 0
 14:8/0 = 0
+14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:8/0 = 0
 17:8/0 = 0
 18:8/0 = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://52bn2y6cgjkm"]
+[gd_scene load_steps=32 format=4 uid="uid://52bn2y6cgjkm"]
 
 [ext_resource type="Script" uid="uid://dvujio4bewlb8" path="res://Intro/intro.gd" id="1_k2o5b"]
 [ext_resource type="LabelSettings" uid="uid://3w683joq71fd" path="res://Intro/IntroLabel.tres" id="1_x3b8t"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_r85xh"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_r85xh"]
 [ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="10_ic8fc"]
-[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="10_pf2mr"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="11_tddqi"]
 
 [sub_resource type="Animation" id="Animation_k2o5b"]
@@ -473,9 +472,9 @@ autoplay = "Titre"
 anchors_preset = -1
 anchor_left = -0.000520833
 anchor_right = -0.000520833
-offset_left = -472.0
+offset_left = 0.999999
 offset_top = 48.0
-offset_right = -424.0
+offset_right = 49.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -486,9 +485,8 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Titre droit" type="Label" parent="TitreAnimation"]
-offset_left = 1921.0
 offset_top = 48.0
-offset_right = 1969.0
+offset_right = 48.0
 offset_bottom = 73.0
 scale = Vector2(10, 10)
 text = "Moi"
@@ -502,9 +500,9 @@ stream = ExtResource("3_tksip")
 
 [node name="ColorRect" type="ColorRect" parent="TitreAnimation"]
 offset_left = 936.0
-offset_top = -248.0
+offset_top = 24.0
 offset_right = 986.0
-offset_bottom = -16.0
+offset_bottom = 256.0
 
 [node name="TextGauche" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -676,7 +674,7 @@ label_settings = SubResource("LabelSettings_vouss")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sol" type="TileMapLayer" parent="."]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 use_parent_material = true
 scale = Vector2(3.75, 3.75)
@@ -706,7 +704,6 @@ position = Vector2(-680, 864)
 
 [node name="CharacterBodyHANS" parent="." instance=ExtResource("8_r85xh")]
 position = Vector2(-784, 864)
-script = ExtResource("10_pf2mr")
 
 [connection signal="animation_finished" from="TitreAnimation" to="." method="_on_titre_animation_animation_finished"]
 [connection signal="finished" from="TitreAnimation/AudioStreamPlayer" to="." method="_on_intro_music_finished"]
