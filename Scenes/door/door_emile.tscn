@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://s84jfeqs7p4r"]
 
 [ext_resource type="Script" uid="uid://dhai58t5d8mr6" path="res://Scenes/door/door_emile.gd" id="1_o7hnu"]
-[ext_resource type="Texture2D" uid="uid://pchu32lv8xnm" path="res://Images/Portes/porteemilefermee.png" id="2_i80b8"]
+[ext_resource type="Texture2D" uid="uid://bx23osyf01v7b" path="res://Images/Portes/porteemilefermee.png" id="2_i80b8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj185"]
 size = Vector2(88, 126)

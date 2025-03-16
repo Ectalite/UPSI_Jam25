@@ -12,9 +12,10 @@ func _on_hansDoor_triggered():
 	hansDoor = true
 
 func _ready():
-	pass
+	if !BackgroundMusic.playing:
+		BackgroundMusic.play()
 
-func _process(delta):
+func _process(_delta):
 	if milieu1 or milieu2:
 		$Milieu.enabled = false
 		$Milieu.visible = false
@@ -45,7 +46,6 @@ func _on_button_porte_hans_button_pressed() -> void:
 
 func _on_button_porte_emile_button_pressed() -> void:
 	$DoorEmile.unlock()
-
 
 func _on_audio_stream_player_finished() -> void:
 	BackgroundMusic.volume_db = -7

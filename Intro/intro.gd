@@ -127,6 +127,9 @@ func _process(delta):
 	if hansDoor and emileDoor:
 		#Change scene
 		#get_tree().change_scene_to_file("res://level1/scene.tscn")
+		if !BackgroundMusic.playing:
+			$TitreAnimation/AudioStreamPlayer.stop()
+			BackgroundMusic.play()
 		SceneTransitioner.transition_to("res://level1/scene.tscn")
 				
 # Optional: Connect the _input function to the input event

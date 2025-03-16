@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://npfu11a3mkh1"]
 
 [ext_resource type="Script" uid="uid://bc1lok6btuvt5" path="res://Scenes/door/door_hans.gd" id="1_u1n5j"]
-[ext_resource type="Texture2D" uid="uid://bah5ufkpb0562" path="res://Images/Portes/portehansfermee.png" id="2_3ed1j"]
+[ext_resource type="Texture2D" uid="uid://coc7kkcmh0hmc" path="res://Images/Portes/portehansfermee.png" id="2_3ed1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj185"]
 size = Vector2(84, 128)
