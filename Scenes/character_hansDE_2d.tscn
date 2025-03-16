@@ -1,46 +1,9 @@
 [gd_scene load_steps=30 format=3 uid="uid://cxwejmub33a1t"]
 
 [ext_resource type="Texture2D" uid="uid://cegjft2pcpan6" path="res://Images/Hans et Emile/Hans/Idle (32x32).png" id="1_3dkku"]
+[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="1_fqsvs"]
 [ext_resource type="Texture2D" uid="uid://rawhqba6dpmp" path="res://Images/Hans et Emile/Hans/Jump (32x32).png" id="2_fqsvs"]
 [ext_resource type="Texture2D" uid="uid://dsv0fot7223wp" path="res://Images/Hans et Emile/Hans/Run (32x32).png" id="3_6s26p"]
-
-[sub_resource type="GDScript" id="GDScript_oid6a"]
-script/source = "extends CharacterBody2D
-
-
-const SPEED = 350.0
-const JUMP_VELOCITY = -800.0
-@onready var sprite_hans_2d: AnimatedSprite2D = $SpriteHANS2D
-
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if (velocity.x > 1 || velocity.x < -1):
-		sprite_hans_2d.animation = \"running\"
-	else:
-		sprite_hans_2d.animation = \"default\"
-	
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(\"jumpP2\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		sprite_hans_2d.animation = \"jumping\"
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"leftP2\", \"rightP2\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, 13)
-
-	move_and_slide()
-	
-	var isLeft = velocity.x < 0
-	sprite_hans_2d.flip_h = isLeft 
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tj7"]
 atlas = ExtResource("1_3dkku")
@@ -229,7 +192,7 @@ size = Vector2(73.125, 97.375)
 
 [node name="CharacterBodyHANS2D" type="CharacterBody2D" groups=["Hans"]]
 collision_layer = 2
-script = SubResource("GDScript_oid6a")
+script = ExtResource("1_fqsvs")
 
 [node name="SpriteHANS2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
