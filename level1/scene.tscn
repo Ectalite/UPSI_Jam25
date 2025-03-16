@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://obxhclsg6s3o" path="res://Audio/Hello, how are you_ I am under the water [Bu8bH2P37kY].mp3" id="7_3x5wy"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="7_t78tk"]
 [ext_resource type="PackedScene" uid="uid://bk0pt8ltywtl2" path="res://Scenes/button/button.tscn" id="9_f5u2d"]
-[ext_resource type="Script" uid="uid://bgim8wr0bkk3k" path="res://level1/waterfall.gd" id="10_pyx6g"]
+[ext_resource type="Script" path="res://level1/waterfall.gd" id="10_pyx6g"]
 [ext_resource type="Texture2D" uid="uid://crhoyucq3d5wb" path="res://Images/Terrain/Terrain (16x16) pressure water.png" id="12_g1ecd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t78tk"]
@@ -101,7 +101,7 @@ _data = {
 &"RESET": SubResource("Animation_yqmv5")
 }
 
-[node name="Node" type="Node"]
+[node name="Node2" type="Node"]
 script = ExtResource("1_t78tk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
