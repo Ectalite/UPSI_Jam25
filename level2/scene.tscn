@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://67k5vydtj8w1"]
+[gd_scene load_steps=14 format=4 uid="uid://67k5vydtj8w1"]
 
 [ext_resource type="Script" uid="uid://bocuyvao8wpw" path="res://level2/scene.gd" id="1_jgev5"]
 [ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="2_7trsf"]
@@ -11,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_xlb5q"]
 [ext_resource type="TileSet" uid="uid://dmidgnmcu60rb" path="res://level2/TileSet.tres" id="9_6rs2n"]
 [ext_resource type="AudioStream" uid="uid://dw5gt4o067s3f" path="res://Audio/ATTENTIONchaises.mp3" id="11_ly14p"]
+[ext_resource type="FontFile" uid="uid://cav4tu8p3eal" path="res://fonts/Helvetica.ttf" id="12_7trsf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1f7e"]
+font = ExtResource("12_7trsf")
+font_size = 19
+font_color = Color(8.73184e-06, 8.73184e-06, 8.73184e-06, 1)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_jgev5")
@@ -92,6 +98,14 @@ tile_set = ExtResource("9_6rs2n")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ly14p")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1448.0
+offset_top = 504.0
+offset_right = 1590.0
+offset_bottom = 527.0
+text = "Oui, le jump passe"
+label_settings = SubResource("LabelSettings_m1f7e")
 
 [connection signal="area_triggered" from="DoorEmile" to="." method="_on_emileDoor_triggered"]
 [connection signal="area_triggered" from="DoorHans" to="." method="_on_hansDoor_triggered"]

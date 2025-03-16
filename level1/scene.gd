@@ -22,8 +22,7 @@ func _ready():
 func _process(delta):
 	if hansDoor and emileDoor:
 		#Change scene
-		#SceneTransitioner.transition_to("res://level1/scene.tscn")
-		print("The end")
+		SceneTransitioner.transition_to("res://level2/scene.tscn")
 
 func _on_button_waterfall_button_pressed() -> void:
 	waterfall.visible = true
