@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b0koei44q1h0r"]
+[gd_scene load_steps=12 format=3 uid="uid://b0koei44q1h0r"]
 
 [ext_resource type="Script" uid="uid://b3mk1q6xab4ym" path="res://credits/credits.gd" id="1_4d7eq"]
 [ext_resource type="FontFile" uid="uid://dqem3j8ml5du7" path="res://fonts/UnifontExMono.ttf" id="1_pnupi"]
@@ -24,6 +24,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1080.0, -1500.0, -700.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1.15, 1.0]
+}
 
 [sub_resource type="Animation" id="Animation_5mgi5"]
 length = 0.001
@@ -39,6 +51,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1080.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.15]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fnrqr"]
 _data = {
@@ -47,62 +71,30 @@ _data = {
 }
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fnrqr"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_5mgi5"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = true
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5mgi5"]
+lifetime_randomness = 0.5
 particle_flag_disable_z = true
+velocity_pivot = Vector3(1, 1, 0)
+direction = Vector3(1, 1, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
 gravity = Vector3(0, 98, 0)
+anim_offset_max = 1.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnrqr"]
-atlas = ExtResource("4_5mgi5")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ujq1"]
-atlas = ExtResource("4_5mgi5")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kbyly"]
-atlas = ExtResource("4_5mgi5")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3l57d"]
-atlas = ExtResource("4_5mgi5")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svjwp"]
-atlas = ExtResource("4_5mgi5")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cua2"]
-atlas = ExtResource("4_5mgi5")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j2v1s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fnrqr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ujq1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kbyly")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3l57d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_svjwp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6cua2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fnrqr"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+velocity_pivot = Vector3(1, 1, 0)
+direction = Vector3(-1, 1, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+anim_offset_max = 1.0
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_4d7eq")
@@ -137,13 +129,26 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2wpau")
+pitch_scale = 1.15
 autoplay = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_fnrqr")
-texture = SubResource("AnimatedTexture_5mgi5")
+amount = 50
+texture = ExtResource("4_5mgi5")
+lifetime = 4.18
+explosiveness = 0.15
+randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5mgi5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_j2v1s")
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_fnrqr")
+position = Vector2(1920, 0)
+amount = 50
+texture = ExtResource("4_5mgi5")
+lifetime = 4.18
+explosiveness = 0.15
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_fnrqr")
