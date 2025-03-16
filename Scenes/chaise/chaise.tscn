@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdlvrbtjbl8it"]
+
+[ext_resource type="Texture2D" uid="uid://koel3kfghdd5" path="res://Images/Terrain/chaise.png" id="1_5yg8w"]
+
+[node name="Chaise" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5yg8w")
+centered = false

@@ -37,3 +37,15 @@ func _on_ouverture_milieu_2_button_pressed() -> void:
 
 func _on_ouverture_milieu_2_button_released() -> void:
 	milieu2 = false
+
+func _on_button_porte_hans_button_pressed() -> void:
+	BackgroundMusic.volume_db = -10
+	$AudioStreamPlayer.play()
+	$DoorHans.unlock()
+
+func _on_button_porte_emile_button_pressed() -> void:
+	$DoorEmile.unlock()
+
+
+func _on_audio_stream_player_finished() -> void:
+	BackgroundMusic.volume_db = -7

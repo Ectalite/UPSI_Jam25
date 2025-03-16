@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://67k5vydtj8w1"]
+[gd_scene load_steps=12 format=4 uid="uid://67k5vydtj8w1"]
 
 [ext_resource type="Script" uid="uid://bocuyvao8wpw" path="res://level2/scene.gd" id="1_jgev5"]
 [ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="2_7trsf"]
+[ext_resource type="PackedScene" uid="uid://bdlvrbtjbl8it" path="res://Scenes/chaise/chaise.tscn" id="3_bdyty"]
 [ext_resource type="TileSet" uid="uid://dm8hyxr0ffxr7" path="res://level1/TileSet.tres" id="3_m1f7e"]
 [ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="4_e2vd3"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="5_bbd5d"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_xyevs"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_xlb5q"]
 [ext_resource type="TileSet" uid="uid://dmidgnmcu60rb" path="res://level2/TileSet.tres" id="9_6rs2n"]
+[ext_resource type="AudioStream" uid="uid://dw5gt4o067s3f" path="res://Audio/ATTENTIONchaises.mp3" id="11_ly14p"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_jgev5")
@@ -19,6 +21,36 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_7trsf")
 stretch_mode = 1
+
+[node name="Chaise" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1568, 88)
+
+[node name="Chaise2" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1616, 88)
+
+[node name="Chaise3" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1672, 88)
+
+[node name="Chaise4" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1048, 448)
+
+[node name="Chaise5" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1600, 328)
+
+[node name="Chaise6" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1640, 88)
+
+[node name="Chaise7" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1592, 96)
+
+[node name="Chaise8" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1768, 176)
+
+[node name="Chaise9" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1816, 160)
+
+[node name="Chaise10" parent="." instance=ExtResource("3_bdyty")]
+position = Vector2(1776, 112)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -40,10 +72,10 @@ position = Vector2(90, 856)
 [node name="CharacterBodyHANS2D" parent="." instance=ExtResource("8_xlb5q")]
 position = Vector2(-20, 855)
 
-[node name="Button" parent="." instance=ExtResource("6_d6flr")]
+[node name="ButtonPorteHans" parent="." instance=ExtResource("6_d6flr")]
 position = Vector2(1781, 119)
 
-[node name="Button2" parent="." instance=ExtResource("6_d6flr")]
+[node name="ButtonPorteEmile" parent="." instance=ExtResource("6_d6flr")]
 position = Vector2(71, 179)
 
 [node name="OuvertureMilieu" parent="." instance=ExtResource("6_d6flr")]
@@ -58,9 +90,15 @@ scale = Vector2(3.75, 3.75)
 tile_map_data = PackedByteArray("AAAPAA8AAAAPAAgAAAAPABAAAAAPAAoAAAAQAA8AAAAPAAgAAAAQABAAAAAPAAoAAAA=")
 tile_set = ExtResource("9_6rs2n")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ly14p")
+
 [connection signal="area_triggered" from="DoorEmile" to="." method="_on_emileDoor_triggered"]
 [connection signal="area_triggered" from="DoorHans" to="." method="_on_hansDoor_triggered"]
+[connection signal="button_pressed" from="ButtonPorteHans" to="." method="_on_button_porte_hans_button_pressed"]
+[connection signal="button_pressed" from="ButtonPorteEmile" to="." method="_on_button_porte_emile_button_pressed"]
 [connection signal="button_pressed" from="OuvertureMilieu" to="." method="_on_ouverture_milieu_button_pressed"]
 [connection signal="button_released" from="OuvertureMilieu" to="." method="_on_ouverture_milieu_button_released"]
 [connection signal="button_pressed" from="OuvertureMilieu2" to="." method="_on_ouverture_milieu_2_button_pressed"]
 [connection signal="button_released" from="OuvertureMilieu2" to="." method="_on_ouverture_milieu_2_button_released"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
