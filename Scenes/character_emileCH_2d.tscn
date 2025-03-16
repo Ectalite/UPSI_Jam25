@@ -174,7 +174,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7obnc"]
-size = Vector2(73.125, 103.688)
+size = Vector2(73.125, 96.6878)
 
 [node name="CharacterBodyEMILE2D" type="CharacterBody2D" groups=["Emile"]]
 script = ExtResource("1_xrdqi")
@@ -188,5 +188,5 @@ autoplay = "default"
 frame_progress = 0.526919
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(134.438, 98.8438)
+position = Vector2(134.438, 102.344)
 shape = SubResource("RectangleShape2D_7obnc")

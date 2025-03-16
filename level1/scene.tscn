@@ -1,11 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://deuplwpm3lpgw"]
+[gd_scene load_steps=16 format=4 uid="uid://deuplwpm3lpgw"]
 
 [ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="1_rnita"]
 [ext_resource type="Script" uid="uid://6irqg1c4a7i7" path="res://level1/scene.gd" id="1_t78tk"]
 [ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="4_axbwq"]
 [ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="4_eu3x3"]
 [ext_resource type="TileSet" uid="uid://dm8hyxr0ffxr7" path="res://level1/TileSet.tres" id="5_6yydc"]
-[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="5_axbwq"]
 [ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="6_6q4rh"]
 [ext_resource type="AudioStream" uid="uid://obxhclsg6s3o" path="res://Audio/Hello, how are you_ I am under the water [Bu8bH2P37kY].mp3" id="7_3x5wy"]
 [ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="7_t78tk"]
@@ -133,7 +132,6 @@ position = Vector2(-16, 864)
 
 [node name="CharacterBodyHANS2D" parent="." instance=ExtResource("4_axbwq")]
 position = Vector2(1680, 856)
-script = ExtResource("5_axbwq")
 
 [node name="Waterfall" type="Node2D" parent="."]
 visible = false
