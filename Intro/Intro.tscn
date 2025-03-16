@@ -502,9 +502,9 @@ stream = ExtResource("3_tksip")
 
 [node name="ColorRect" type="ColorRect" parent="TitreAnimation"]
 offset_left = 936.0
-offset_top = 24.0
+offset_top = -248.0
 offset_right = 986.0
-offset_bottom = 256.0
+offset_bottom = -16.0
 
 [node name="TextGauche" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
