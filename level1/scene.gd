@@ -34,14 +34,19 @@ func _on_button_waterfall_button_released() -> void:
 	$Waterfall/WaterfallCollision.monitoring = false
 
 func _on_waterfall_sound_finished() -> void:
-	#Unlock doors
-	var doorEmile = $DoorEmile as Node2D
-	var doorHans = $DoorHans as Node2D
-	doorEmile.unlock()
-	doorHans.unlock()
+	#Up platform
+	$Platform.play("Platform")
 
 func _on_waterfall_waterfall_enterred() -> void:
 	print("Hello waterfall")
 	if !waterfallTriggered:
 		waterfallTriggered = true
 		sound.play()
+
+
+func _on_platform_animation_finished(anim_name: StringName) -> void:
+	#Unlock doors
+	var doorEmile = $DoorEmile as Node2D
+	var doorHans = $DoorHans as Node2D
+	doorEmile.unlock()
+	doorHans.unlock()
