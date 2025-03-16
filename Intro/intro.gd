@@ -118,6 +118,7 @@ func _process(delta):
 						elif child.name == "TextDroit" and subchild.name == "Press":
 							subchild.text = "Hans la"
 						elif subchild.name == "W":
+							subchild.label_settings.font = load("res://fonts/UnifontExMono.ttf")
 							subchild.text = "↙"
 						elif subchild.name == "Down":
 							subchild.text = "↘"
