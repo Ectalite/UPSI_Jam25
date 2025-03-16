@@ -1,28 +1,28 @@
-[gd_scene load_steps=13 format=4 uid="uid://deuplwpm3lpgw"]
+[gd_scene load_steps=13 format=4 uid="uid://67k5vydtj8w1"]
 
-[ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="1_rnita"]
-[ext_resource type="Script" uid="uid://6irqg1c4a7i7" path="res://level1/scene.gd" id="1_t78tk"]
-[ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="4_axbwq"]
-[ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="4_eu3x3"]
-[ext_resource type="TileSet" uid="uid://dm8hyxr0ffxr7" path="res://level1/TileSet.tres" id="5_6yydc"]
-[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="5_axbwq"]
-[ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="6_6q4rh"]
-[ext_resource type="AudioStream" uid="uid://obxhclsg6s3o" path="res://Audio/Hello, how are you_ I am under the water [Bu8bH2P37kY].mp3" id="7_3x5wy"]
-[ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="7_t78tk"]
-[ext_resource type="PackedScene" uid="uid://bk0pt8ltywtl2" path="res://Scenes/button/button.tscn" id="9_f5u2d"]
-[ext_resource type="Script" path="res://level1/waterfall.gd" id="10_pyx6g"]
+[ext_resource type="Script" uid="uid://6irqg1c4a7i7" path="res://level1/scene.gd" id="1_ly14p"]
+[ext_resource type="Texture2D" uid="uid://bj52em3bgrleu" path="res://Images/Background/Gray.png" id="2_7trsf"]
+[ext_resource type="TileSet" uid="uid://dm8hyxr0ffxr7" path="res://level1/TileSet.tres" id="3_m1f7e"]
+[ext_resource type="PackedScene" uid="uid://s84jfeqs7p4r" path="res://Scenes/door/door_emile.tscn" id="4_e2vd3"]
+[ext_resource type="PackedScene" uid="uid://npfu11a3mkh1" path="res://Scenes/door/door_hans.tscn" id="5_bbd5d"]
+[ext_resource type="PackedScene" uid="uid://bk0pt8ltywtl2" path="res://Scenes/button/button.tscn" id="6_d6flr"]
+[ext_resource type="PackedScene" uid="uid://bvwfif8bl488g" path="res://Scenes/character_emileCH_2d.tscn" id="7_xyevs"]
+[ext_resource type="PackedScene" uid="uid://cxwejmub33a1t" path="res://Scenes/character_hansDE_2d.tscn" id="8_xlb5q"]
+[ext_resource type="Script" uid="uid://ceyt35q08l7c5" path="res://Scenes/character_hansDE_2d.gd" id="9_87yv4"]
+[ext_resource type="Script" path="res://level1/waterfall.gd" id="10_t5gck"]
+[ext_resource type="AudioStream" uid="uid://obxhclsg6s3o" path="res://Audio/Hello, how are you_ I am under the water [Bu8bH2P37kY].mp3" id="11_etusw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t78tk"]
 size = Vector2(17.7334, 71.8666)
 
 [node name="Node" type="Node"]
-script = ExtResource("1_t78tk")
+script = ExtResource("1_ly14p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_rnita")
+texture = ExtResource("2_7trsf")
 stretch_mode = 1
 
 [node name="Layer0" type="TileMapLayer" parent="."]
@@ -31,27 +31,27 @@ use_parent_material = true
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(3.75, 3.75)
 tile_map_data = PackedByteArray("AAABABEAAAAHAAAAAAACABEAAAAHAAAAAAADABEAAAAHAAAAAAAEABEAAAAHAAAAAAAFABEAAAAHAAAAAAAGABEAAAAHAAAAAAAHABEAAAAHAAAAAAAIABEAAAAHAAAAAAAJABEAAAAHAAAAAAAKABEAAAAHAAAAAAALABEAAAAHAAAAAAAMABEAAAAHAAAAAAANABEAAAAHAAAAAAAOABEAAAAHAAAAAAAPABEAAAAHAAAAAAAQABEAAAAHAAAAAAARABEAAAAHAAAAAAASABEAAAAHAAAAAAATABEAAAAHAAAAAAAUABEAAAAHAAAAAAAVABEAAAAHAAAAAAAWABEAAAAHAAAAAAAXABEAAAAHAAAAAAAYABEAAAAHAAAAAAAZABEAAAAHAAAAAAAaABEAAAAHAAAAAAAbABEAAAAHAAAAAAAcABEAAAAHAAAAAAAdABEAAAAHAAAAAAAeABEAAAAHAAAAAAAAABEAAAAMAAUAAAAAABAAAAAMAAUAAAAAAA8AAAAMAAUAAAAAAA4AAAAMAAUAAAAAAA0AAAAMAAUAAAAAAAwAAAAMAAUAAAAAAAsAAAAMAAUAAAAAAAoAAAAMAAUAAAAAAAkAAAAMAAUAAAAAAAgAAAAMAAUAAAAAAAcAAAAMAAUAAAAAAAYAAAAMAAUAAAAAAAUAAAAMAAUAAAAAAAQAAAAMAAUAAAAAAAMAAAAMAAUAAAAAAAIAAAAMAAUAAAACAAAAAAAMAAUAAAADAAAAAAAMAAUAAAAEAAAAAAAMAAUAAAAFAAAAAAAMAAUAAAAGAAAAAAAMAAUAAAAHAAAAAAAMAAUAAAAIAAAAAAAMAAUAAAAJAAAAAAAMAAUAAAAKAAAAAAAMAAUAAAALAAAAAAAMAAUAAAAMAAAAAAAMAAUAAAANAAAAAAAMAAUAAAAOAAAAAAAMAAUAAAAPAAAAAAAMAAUAAAAQAAAAAAAMAAUAAAARAAAAAAAMAAUAAAASAAAAAAAMAAUAAAATAAAAAAAMAAUAAAAUAAAAAAAMAAUAAAAVAAAAAAAMAAUAAAAWAAAAAAAMAAUAAAAXAAAAAAAMAAUAAAAYAAAAAAAMAAUAAAAZAAAAAAAMAAUAAAAaAAAAAAAMAAUAAAAbAAAAAAAMAAUAAAAcAAAAAAAMAAUAAAAdAAAAAAAMAAUAAAAeAAAAAAAMAAUAAAAfAAAAAAAMAAUAAAAfAAEAAAAMAAUAAAAfAAIAAAAMAAUAAAAfAAMAAAAMAAUAAAAfAAQAAAAMAAUAAAAfAAUAAAAMAAUAAAAfAAYAAAAMAAUAAAAfAAcAAAAMAAUAAAAfAAgAAAAMAAUAAAAfAAkAAAAMAAUAAAAfAAoAAAAMAAUAAAAfAAsAAAAMAAUAAAAfAAwAAAAMAAUAAAAfAA0AAAAMAAUAAAAfAA4AAAAMAAUAAAAfAA8AAAAMAAUAAAAfABAAAAAMAAUAAAAfABEAAAAMAAUAAAAWAA8AAAAHAAAAAAAWABAAAAAHAAEAAAAXAA8AAAAHAAAAAAAXABAAAAAHAAEAAAAYAA8AAAAIAAAAAAAYABAAAAAHAAEAAAAZABAAAAAIAAAAAAATAA8AAAAHAAAAAAATABAAAAAHAAEAAAAUAA8AAAAHAAAAAAAUABAAAAAHAAEAAAAVAA8AAAAHAAAAAAAVABAAAAAHAAEAAAAGAA8AAAAGAAAAAAAGABAAAAAGAAEAAAAHAA8AAAAHAAAAAAAHABAAAAAHAAEAAAAIAA8AAAAHAAAAAAAIABAAAAAHAAEAAAAJAA8AAAAHAAAAAAAJABAAAAAHAAEAAAAKAA8AAAAHAAAAAAAKABAAAAAHAAEAAAALAA8AAAAHAAAAAAALABAAAAAHAAEAAAAMAA8AAAAHAAAAAAAMABAAAAAHAAEAAAANAA8AAAAHAAAAAAANABAAAAAHAAEAAAAOAA8AAAAHAAAAAAAOABAAAAAHAAEAAAAPAA8AAAAHAAAAAAAPABAAAAAHAAEAAAAQAA8AAAAHAAAAAAAQABAAAAAHAAEAAAARAA8AAAAHAAAAAAARABAAAAAHAAEAAAASAA8AAAAHAAAAAAASABAAAAAHAAEAAAAFABAAAAAGAAAAAAAQAAUAAAAPAAEAAAAQAAYAAAAPAAEAAAAQAAcAAAAPAAEAAAAQAAgAAAAPAAEAAAAQAAkAAAAPAAEAAAAQAAoAAAAPAAEAAAAQAAsAAAAPAAEAAAAQAAwAAAAPAAEAAAAQAA0AAAAPAAEAAAAQAA4AAAAPAAEAAAAQAAQAAAAPAAAAAAABAA0AAAARAAEAAAACAA0AAAASAAEAAAADAA0AAAATAAEAAAASAAoAAQABAAAAAAARAAsAAQAPAAUAAAARAAwAAAAPAAUAAAARAA0AAAAPAAUAAAARAA4AAAAPAAUAAAATAAoAAQABAAAAAAAUAAoAAQABAAAAAAARAAoAAQAPAAQAAAAPAAsAAQACAAQAAAAGAAsAAQADAAUAAAAHAAsAAQABAAQAAAAIAAsAAQABAAQAAAAJAAsAAQABAAQAAAAKAAsAAQABAAQAAAALAAsAAQABAAQAAAAMAAsAAQABAAQAAAANAAsAAQABAAQAAAAOAAsAAQABAAQAAAAPAAwAAQADAAUAAAAAAAAAAAAMAAUAAAAAAAEAAAAMAAUAAAABAAAAAAAMAAUAAAAOAAQAAQABAAQAAAAPAAQAAQACAAQAAAARAAQAAQAAAAQAAAASAAQAAQABAAQAAAANAAQAAQABAAQAAAAMAAQAAQABAAQAAAALAAQAAQABAAQAAAAKAAQAAQABAAQAAAAJAAQAAQADAAUAAAATAAQAAQABAAQAAAAUAAQAAQABAAQAAAAVAAQAAQABAAQAAAAWAAQAAQABAAQAAAAXAAQAAQABAAQAAAAYAAQAAQADAAUAABAPAAUAAQADAAUAAAARAAUAAQADAAUAABANAAkAAAARAAEAAAAOAAkAAAASAAEAAAAPAAkAAAATAAEAAAAIAAcAAAASAAEAAAAJAAcAAAASAAEAAAAKAAcAAAATAAEAAAAHAAcAAAARAAEAAAAEAAUAAAARAAEAAAAFAAUAAAASAAEAAAAGAAUAAAATAAEAAAAcAA0AAAASAAEAAAAdAA0AAAASAAEAAAAeAA0AAAASAAEAAAAbAA0AAAARAAEAAAAVAAoAAQABAAAAAAAWAAoAAQABAAAAAAAXAAoAAQABAAAAAAAYAAoAAQABAAAAAAAdAAsAAAARAAEAAAAeAAsAAAASAAEAAAAZAAoAAQABAAAAAAAWAAgAAAARAAEAAAAXAAgAAAATAAEAAAAaAAcAAAARAAEAAAAbAAcAAAASAAEAAAAcAAcAAAASAAEAAAAdAAcAAAASAAEAAAAeAAcAAAATAAEAAAAcAAUAAAARAAEAAAAdAAUAAAATAAEAAAA=")
-tile_set = ExtResource("5_6yydc")
+tile_set = ExtResource("3_m1f7e")
 
-[node name="DoorEmile" parent="." instance=ExtResource("6_6q4rh")]
+[node name="DoorEmile" parent="." instance=ExtResource("4_e2vd3")]
 position = Vector2(816, 103)
 
-[node name="DoorHans" parent="." instance=ExtResource("7_t78tk")]
+[node name="DoorHans" parent="." instance=ExtResource("5_bbd5d")]
 position = Vector2(1080, 103)
 
-[node name="Button_waterfall" parent="." instance=ExtResource("9_f5u2d")]
+[node name="Button_waterfall" parent="." instance=ExtResource("6_d6flr")]
 position = Vector2(640, 600)
 
-[node name="CharacterBodyEMILE2D" parent="." instance=ExtResource("4_eu3x3")]
-position = Vector2(-16, 864)
+[node name="CharacterBodyEMILE2D" parent="." instance=ExtResource("7_xyevs")]
+position = Vector2(362, 457)
 
-[node name="CharacterBodyHANS2D" parent="." instance=ExtResource("4_axbwq")]
+[node name="CharacterBodyHANS2D" parent="." instance=ExtResource("8_xlb5q")]
 position = Vector2(1680, 856)
-script = ExtResource("5_axbwq")
+script = ExtResource("9_87yv4")
 
 [node name="Waterfall" type="Node2D" parent="."]
 scale = Vector2(3.75, 3.75)
-script = ExtResource("10_pyx6g")
+script = ExtResource("10_t5gck")
 
 [node name="WaterfallCollision" type="Area2D" parent="Waterfall"]
 collision_layer = 4
@@ -62,11 +62,11 @@ position = Vector2(294.4, 204.8)
 shape = SubResource("RectangleShape2D_t78tk")
 
 [node name="WaterfallSound" type="AudioStreamPlayer" parent="Waterfall"]
-stream = ExtResource("7_3x5wy")
+stream = ExtResource("11_etusw")
 
 [node name="Texture" type="TileMapLayer" parent="Waterfall"]
 tile_map_data = PackedByteArray("AAASAA4AAgAAAAEAAAASAAoAAgAAAAAAAAASAAsAAgAAAAAAAAASAAwAAgAAAAAAAAASAA0AAgAAAAAAAAA=")
-tile_set = ExtResource("5_6yydc")
+tile_set = ExtResource("3_m1f7e")
 
 [connection signal="area_triggered" from="DoorEmile" to="." method="_on_emileDoor_triggered"]
 [connection signal="area_triggered" from="DoorHans" to="." method="_on_hansDoor_triggered"]
