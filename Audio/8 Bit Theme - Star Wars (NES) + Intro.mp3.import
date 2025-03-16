@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ls4wl12ejl0o"
+path="res://.godot/imported/8 Bit Theme - Star Wars (NES) + Intro.mp3-e0dbc0076a1a37d4c812f48462722e38.mp3str"
+
+[deps]
+
+source_file="res://Audio/8 Bit Theme - Star Wars (NES) + Intro.mp3"
+dest_files=["res://.godot/imported/8 Bit Theme - Star Wars (NES) + Intro.mp3-e0dbc0076a1a37d4c812f48462722e38.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
