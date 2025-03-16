@@ -1,0 +1,149 @@
+[gd_scene load_steps=19 format=3 uid="uid://b0koei44q1h0r"]
+
+[ext_resource type="Script" uid="uid://b3mk1q6xab4ym" path="res://credits/credits.gd" id="1_4d7eq"]
+[ext_resource type="FontFile" uid="uid://dqem3j8ml5du7" path="res://fonts/UnifontExMono.ttf" id="1_pnupi"]
+[ext_resource type="AudioStream" uid="uid://ls4wl12ejl0o" path="res://Audio/8 Bit Theme - Star Wars (NES) + Intro.mp3" id="2_2wpau"]
+[ext_resource type="Texture2D" uid="uid://c3smb0tyq1277" path="res://Images/Other/Confetti (16x16).png" id="4_5mgi5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2wpau"]
+font = ExtResource("1_pnupi")
+font_size = 100
+
+[sub_resource type="Animation" id="Animation_4d7eq"]
+resource_name = "Fin"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1080.0, -1500.0, -700.0]
+}
+
+[sub_resource type="Animation" id="Animation_5mgi5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1080.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnrqr"]
+_data = {
+&"Fin": SubResource("Animation_4d7eq"),
+&"RESET": SubResource("Animation_5mgi5")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fnrqr"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5mgi5"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5mgi5"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnrqr"]
+atlas = ExtResource("4_5mgi5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ujq1"]
+atlas = ExtResource("4_5mgi5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbyly"]
+atlas = ExtResource("4_5mgi5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l57d"]
+atlas = ExtResource("4_5mgi5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svjwp"]
+atlas = ExtResource("4_5mgi5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cua2"]
+atlas = ExtResource("4_5mgi5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2v1s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnrqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ujq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbyly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l57d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svjwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cua2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_4d7eq")
+
+[node name="Label" type="Label" parent="."]
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 2623.2
+text = "Merci d'avoir joué !
+
+
+
+
+
+
+Crédits
+
+Game devs
+Xavier Hueber et Noé Lindenlaub
+
+Soutien moral
+Nils Crettenand
+"
+label_settings = SubResource("LabelSettings_2wpau")
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fnrqr")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2wpau")
+autoplay = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_fnrqr")
+texture = SubResource("AnimatedTexture_5mgi5")
+process_material = SubResource("ParticleProcessMaterial_5mgi5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j2v1s")

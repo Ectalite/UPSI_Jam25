@@ -135,4 +135,6 @@ func _ready():
 @warning_ignore("unused_parameter")
 func _on_titre_animation_animation_finished(anim_name: StringName) -> void:
 	activate = true
-	
+
+func _on_intro_music_finished() -> void:
+	BackgroundMusic.play()

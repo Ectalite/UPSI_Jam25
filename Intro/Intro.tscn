@@ -709,5 +709,6 @@ position = Vector2(-784, 864)
 script = ExtResource("10_pf2mr")
 
 [connection signal="animation_finished" from="TitreAnimation" to="." method="_on_titre_animation_animation_finished"]
+[connection signal="finished" from="TitreAnimation/AudioStreamPlayer" to="." method="_on_intro_music_finished"]
 [connection signal="area_triggered" from="DoorEmile" to="." method="_on_emileDoor_triggered"]
 [connection signal="area_triggered" from="DoorHans" to="." method="_on_hansDoor_triggered"]

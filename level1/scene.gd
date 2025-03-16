@@ -16,6 +16,8 @@ func _ready():
 	waterfall.visible = false
 	waterfall.set_process(false)
 	$Waterfall/WaterfallCollision.monitoring = false
+	if !BackgroundMusic.playing:
+		BackgroundMusic.play()
 
 func _process(delta):
 	if hansDoor and emileDoor:
@@ -36,11 +38,13 @@ func _on_button_waterfall_button_released() -> void:
 func _on_waterfall_sound_finished() -> void:
 	#Up platform
 	$Platform.play("Platform")
+	BackgroundMusic.volume_db = -7
 
 func _on_waterfall_waterfall_enterred() -> void:
 	print("Hello waterfall")
 	if !waterfallTriggered:
 		waterfallTriggered = true
+		BackgroundMusic.volume_db = -10
 		sound.play()
 
 
